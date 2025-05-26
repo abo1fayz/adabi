@@ -4,18 +4,214 @@
   <meta charset="UTF-8">
   <title>مكتبة البكالوريا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body { font-family: 'Arial', sans-serif; background: #f7f7f7; text-align: center; padding: 50px; }
-    h1 { color: #2c3e50; }
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
     
+    body {
+      font-family: 'Tajawal', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f7f7f7 0%, #e6f2ff 100%);
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    h1 {
+      color: var(--secondary-color);
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+    
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .nav-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+      min-width: 200px;
+    }
+    
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      background-color: var(--secondary-color);
+    }
+    
+    .nav-btn i {
+      margin-left: 8px;
+    }
+    
+    .developers {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+    }
+    
+    .developers h2 {
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+    
+    .dev-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .dev-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      width: 200px;
+    }
+    
+    .dev-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .dev-card.special {
+      position: relative;
+      border: 2px solid var(--accent-color);
+    }
+    
+    .dev-card.special::before {
+      content: "المطور الرئيسي";
+      position: absolute;
+      top: -12px;
+      right: 15px;
+      background: var(--accent-color);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    
+    .dev-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    
+    .dev-card.special .dev-name {
+      color: var(--accent-color);
+    }
+    
+    .dev-social {
+      margin-top: 15px;
+    }
+    
+    .dev-social a {
+      color: var(--secondary-color);
+      margin: 0 5px;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    
+    .dev-social a:hover {
+      color: var(--primary-color);
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-btn {
+        padding: 12px 25px;
+        min-width: 160px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>📚 مكتبة البكالوريا</h1>
-  <a class="nav-btn" href="https://abo1fayz.github.io/adabi2/">الفرع العلمي</a>
-  <a class="nav-btn" href="literature.html">الفرع الأدبي</a>
-
-  
- 
+  <div class="container">
+    <h1>📚 مكتبة البكالوريا</h1>
+    
+    <div class="buttons-container">
+      <a class="nav-btn" href="https://abo1fayz.github.io/adabi2/">
+        <i class="fas fa-flask"></i> الفرع العلمي
+      </a>
+      <a class="nav-btn" href="literature.html">
+        <i class="fas fa-book-open"></i> الفرع الأدبي
+      </a>
+    </div>
+    
+    <div class="developers">
+      <h2>مطورو الموقع</h2>
+      <div class="dev-list">
+        <div class="dev-card special">
+          <div class="dev-name">GM-MOHAMED</div>
+          <div>المطور الرئيسي</div>
+          <div class="dev-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        
+        <div class="dev-card">
+          <div class="dev-name">محمد صالح</div>
+          <div>مشارك في التطوير</div>
+          <div class="dev-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
