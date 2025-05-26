@@ -14,6 +14,7 @@
       --dark-color: #1a202c;
       --text-color: #e2e8f0;
       --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --success-color: #48bb78;
     }
     
     body {
@@ -56,6 +57,29 @@
       height: 4px;
       background: var(--primary-color);
       border-radius: 2px;
+    }
+    
+    /* تنبيه جديد */
+    .alert {
+      padding: 15px;
+      background-color: var(--success-color);
+      color: #111;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.5s ease-out;
+      font-weight: bold;
+    }
+    
+    .alert i {
+      margin-left: 10px;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .buttons-container {
@@ -188,6 +212,11 @@
 <body>
   <div class="container">
     <h1>📚 مكتبة البكالوريا</h1>
+    
+    <!-- تنبيه جديد -->
+    <div class="alert">
+      <i class="fas fa-bell"></i> جديد! تم إضافة نماذج امتحانات 2023 للفرع العلمي
+    </div>
     
     <div class="buttons-container">
       <a class="nav-btn" href="https://abo1fayz.github.io/adabi2/">
