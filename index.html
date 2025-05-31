@@ -1,84 +1,288 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>مكتبة البكالوريا</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- كود تتبع الزوار بواسطة GoatCounter -->
-  <script data-goatcounter="https://gm-mohamed.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
-
-  <!-- أيقونات -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <style>
-    /* (نفس تنسيقات CSS الموجودة سابقًا، لم يتم تعديلها) */
-    /* ... كامل تنسيق CSS ... */
-  </style>
-</head>
-<body>
-
-  <!-- عنصر التحميل -->
-  <div id="loader-wrapper">
-    <div>
-      <div class="loader-container">
-        <div class="loader loader1"><span></span></div>
-        <div class="loader loader2"><span></span></div>
-        <div class="loader loader3"><i></i></div>
-        <div class="loader loader4"><i></i></div>
-      </div>
-      <p style="color: white; font-size: 1.5em; margin-top: 20px; text-align: center;">جاري تحميل الصفحة...</p>
-    </div>
-  </div>
-
-  <!-- محتوى الموقع -->
-  <div class="container">
-    <h1>📚 مكتبة البكالوريا</h1>
-    <div class="alert">
-      <i class="fas fa-bell"></i> جديد! الانطلاقة الاولى للموقع
-    </div>
-    <div class="buttons-container">
-      <a class="nav-btn" href="https://abo1fayz.github.io/adabi2/">
-        <i class="fas fa-flask"></i> الفرع العلمي
-      </a>
-      <a class="nav-btn" href="https://abo1fayz.github.io/adabi3/">
-        <i class="fas fa-book-open"></i> الفرع الأدبي
-      </a>
-    </div>
-    <div class="developers">
-      <h2>مطورو الموقع</h2>
-      <div class="dev-list">
-        <div class="dev-card special">
-          <div class="dev-name">GM-MOHAMED</div>
-          <div>المطور الاول</div>
-          <div class="dev-social">
-            <a href="https://github.com/abo1fayz"><i class="fab fa-github"></i></a>
-            <a href="https://wa.me/963947733035"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100081592399843"><i class="fa-brands fa-facebook"></i></a>
-          </div>
-        </div>
-        <div class="dev-card">
-          <div class="dev-name">mohamed-saleh</div>
-          <div>المطور الثاني  </div>
-          <div class="dev-social">
-            <a href="https://wa.me/963968283685"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://github.com/MIXPLAYT"><i class="fab fa-github"></i></a>
-            <a href="https://www.facebook.com/share/1CrezvBrQN/"><i class="fa-brands fa-facebook"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- كود إخفاء الخلفية بعد التحميل -->
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loader-wrapper").classList.add("hidden");
-      }, 3000); // 3 ثواني قبل الإخفاء
-    });
-  </script>
-
-</body>
-</html>
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>مكتبة البكالوريا</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- أيقونات -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <style>  
+    /* خلفية التحميل */  
+    #loader-wrapper {  
+      position: fixed;  
+      top: 0; left: 0;  
+      width: 100vw; height: 100vh;  
+      background: #000;  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      z-index: 9999;  
+      transition: opacity 0.8s ease, visibility 0.8s ease;  
+    }  
+  
+    #loader-wrapper.hidden {  
+      opacity: 0;  
+      visibility: hidden;  
+    }  
+  
+    .loader-container {  
+      position: relative;  
+      width: 100%;  
+      height: 200px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.333));  
+      transform: scale(60%);  
+    }  
+  
+    .loader {  
+      position: absolute;  
+      width: 200px;  
+      height: 200px;  
+      border-radius: 50%;  
+      animation: animate 2s linear infinite;  
+    }  
+  
+    .loader1:before,  
+    .loader2:before {  
+      content: "";  
+      position: absolute;  
+      top: 0;  
+      left: 0;  
+      width: 50%;  
+      height: 100%;  
+      background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.4));  
+      background-size: 100px 180px;  
+      background-repeat: no-repeat;  
+      border-top-left-radius: 100px;  
+      border-bottom-left-radius: 100px;  
+    }  
+  
+    .loader2, .loader4 {  
+      animation-delay: -1s;  
+      filter: hue-rotate(290deg);  
+    }  
+  
+    .loader i {  
+      position: absolute;  
+      top: 0;  
+      left: 50%;  
+      transform: translateX(-50%);  
+      width: 20px;  
+      height: 20px;  
+      background: #00fff9;  
+      border-radius: 50%;  
+      z-index: 100;  
+      box-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9, 0 0 30px #00fff9,  
+                  0 0 40px #00fff9, 0 0 50px #00fff9, 0 0 60px #00fff9,  
+                  0 0 70px #00fff9, 0 0 80px #00fff9, 0 0 90px #00fff9,  
+                  0 0 100px #00fff9;  
+    }  
+  
+    .loader span {  
+      position: absolute;  
+      inset: 20px;  
+      background: #000;  
+      border-radius: 50%;  
+      z-index: 1;  
+    }  
+  
+    @keyframes animate {  
+      0% { transform: rotate(0deg); }  
+      100% { transform: rotate(360deg); }  
+    }  
+  
+    /* تنسيقات الموقع */  
+    :root {  
+      --primary-color: #4a9dff;  
+      --secondary-color: #1a2b3c;  
+      --accent-color: #ff6b6b;  
+      --light-color: #2d3748;  
+      --dark-color: #1a202c;  
+      --text-color: #e2e8f0;  
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  
+      --success-color: #48bb78;  
+    }  
+  
+    body {  
+      font-family: 'Tajawal', 'Arial', sans-serif;  
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);  
+      color: var(--text-color);  
+      text-align: center;  
+      padding: 20px;  
+      min-height: 100vh;  
+      margin: 0;  
+    }  
+  
+    .container {  
+      max-width: 1000px;  
+      margin: auto;  
+      padding: 30px;  
+      background-color: var(--light-color);  
+      border-radius: 15px;  
+      box-shadow: var(--shadow);  
+    }  
+  
+    h1 {  
+      font-size: 3em;  
+      margin-bottom: 10px;  
+      position: relative;  
+    }  
+  
+    h1::after {  
+      content: "";  
+      width: 80px;  
+      height: 4px;  
+      background-color: var(--primary-color);  
+      position: absolute;  
+      bottom: -10px;  
+      left: 50%;  
+      transform: translateX(-50%);  
+    }  
+  
+    .alert {  
+      margin-top: 15px;  
+      background-color: var(--accent-color);  
+      color: #fff;  
+      padding: 10px;  
+      border-radius: 8px;  
+      font-weight: bold;  
+    }  
+  
+    .buttons-container {  
+      margin: 40px 0;  
+      display: flex;  
+      flex-direction: column;  
+      gap: 20px;  
+    }  
+  
+    .nav-btn {  
+      display: block;  
+      background-color: var(--primary-color);  
+      color: #fff;  
+      text-decoration: none;  
+      padding: 15px;  
+      border-radius: 12px;  
+      font-size: 1.3em;  
+      font-weight: bold;  
+      box-shadow: var(--shadow);  
+      transition: background-color 0.3s ease;  
+    }  
+  
+    .nav-btn i {  
+      margin-left: 10px;  
+    }  
+  
+    .nav-btn:hover {  
+      background-color: #277bd9;  
+    }  
+  
+    .developers {  
+      margin-top: 50px;  
+    }  
+  
+    .developers h2 {  
+      margin-bottom: 20px;  
+      color: var(--success-color);  
+    }  
+  
+    .dev-list {  
+      display: flex;  
+      flex-wrap: wrap;  
+      justify-content: center;  
+      gap: 30px;  
+    }  
+  
+    .dev-card {  
+      background-color: var(--dark-color);  
+      padding: 20px;  
+      border-radius: 10px;  
+      box-shadow: var(--shadow);  
+      min-width: 250px;  
+    }  
+  
+    .dev-name {  
+      font-size: 1.5em;  
+      margin-bottom: 10px;  
+      color: var(--primary-color);  
+      font-weight: bold;  
+    }  
+  
+    .dev-card.special {  
+      border: 2px solid var(--primary-color);  
+    }  
+  
+    .dev-social a {  
+      color: #fff;  
+      font-size: 1.2em;  
+      margin: 0 8px;  
+      transition: color 0.3s;  
+    }  
+  
+    .dev-social a:hover {  
+      color: var(--primary-color);  
+    }  
+  
+    @media (max-width: 600px) {  
+      h1 {  
+        font-size: 2em;  
+      }  
+      .nav-btn {  
+        font-size: 1em;  
+      }  
+      .dev-card {  
+        width: 100%;  
+      }  
+    }  
+  </style>  </head>  
+<body>    <!-- عنصر التحميل -->  <div id="loader-wrapper">  
+  <div>  
+    <div class="loader-container">  
+      <div class="loader loader1"><span></span></div>  
+      <div class="loader loader2"><span></span></div>  
+      <div class="loader loader3"><i></i></div>  
+      <div class="loader loader4"><i></i></div>  
+    </div>  
+    <p style="color: white; font-size: 1.5em; margin-top: 20px; text-align: center;">جاري تحميل الصفحة...</p>  
+  </div>  
+</div>    <!-- محتوى الموقع -->    <div class="container">  
+    <h1>📚 مكتبة البكالوريا</h1>  
+    <div class="alert">  
+      <i class="fas fa-bell"></i> جديد! الانطلاقة الاولى للموقع  
+    </div>  
+    <div class="buttons-container">  
+      <a class="nav-btn" href="https://abo1fayz.github.io/adabi2/">  
+        <i class="fas fa-flask"></i> الفرع العلمي  
+      </a>  
+      <a class="nav-btn" href="https://abo1fayz.github.io/adabi3/">  
+        <i class="fas fa-book-open"></i> الفرع الأدبي  
+      </a>  
+    </div>  
+    <div class="developers">  
+      <h2>مطورو الموقع</h2>  
+      <div class="dev-list">  
+        <div class="dev-card special">  
+          <div class="dev-name">GM-MOHAMED</div>  
+          <div>المطور الاول</div>  
+          <div class="dev-social">  
+            <a href="https://github.com/abo1fayz"><i class="fab fa-github"></i></a>  
+            <a href="https://wa.me/963947733035"><i class="fa-brands fa-whatsapp"></i></a>  
+            <a href="https://www.facebook.com/profile.php?id=100081592399843"><i class="fa-brands fa-facebook"></i></a>  
+          </div>  
+        </div>  
+        <div class="dev-card">  
+          <div class="dev-name">mohamed-saleh</div>  
+          <div>المطور الثاني  </div>  
+          <div class="dev-social">  
+            <a href="https://wa.me/963968283685"><i class="fa-brands fa-whatsapp"></i></a>  
+            <a href="https://github.com/MIXPLAYT"><i class="fab fa-github"></i></a>  
+            <a href="https://www.facebook.com/share/1CrezvBrQN/"><i class="fa-brands fa-facebook"></i></a>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </div>    <!-- كود إخفاء الخلفية بعد التحميل -->    <script>  
+    window.addEventListener("load", () => {  
+      setTimeout(() => {  
+        document.getElementById("loader-wrapper").classList.add("hidden");  
+      }, 3000); // 3 ثواني قبل الإخفاء  
+    });  
+  </script>  </body>  
+</html> هذه صفحتي
