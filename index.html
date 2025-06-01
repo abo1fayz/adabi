@@ -1,42 +1,180 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>مكتبة البكالوريا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- أيقونات -->
+  <!-- Font Awesome للأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <!-- كود تتبع الإحصاءات من Plausible -->
+  <!-- Plausible Analytics -->
   <script defer data-domain="abo1fayz.github.io" src="https://plausible.io/js/script.js"></script>
 
   <style>
-    /* [هنا كل التنسيقات التي وضعتها كما هي بدون تعديل] */
-    /* ... */
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to left, #1a1a1a, #2e2e2e);
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #00c3ff;
+    }
+
+    .alert {
+      background-color: #ffc107;
+      color: #000;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .nav-btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .developers h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      color: #00e6aa;
+    }
+
+    .dev-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .dev-card {
+      background-color: #222;
+      border: 1px solid #444;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+    }
+
+    .special {
+      border: 2px solid #00ffcc;
+      box-shadow: 0 0 15px #00ffcc88;
+    }
+
+    .dev-name {
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      color: #00d0ff;
+    }
+
+    .dev-social a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 1.4em;
+      transition: color 0.3s;
+    }
+
+    .dev-social a:hover {
+      color: #00ffcc;
+    }
+
+    /* شاشة التحميل */
+    #loader-wrapper {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #111;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .loader-container {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .loader {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: bounce 1s infinite;
+    }
+
+    .loader1 { background: #00ffcc; animation-delay: 0s; }
+    .loader2 { background: #00c3ff; animation-delay: 0.2s; }
+    .loader3 { background: #ffaa00; animation-delay: 0.4s; }
+    .loader4 { background: #ff3366; animation-delay: 0.6s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .buttons-container {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <!-- عنصر التحميل -->
+
+  <!-- شاشة التحميل -->
   <div id="loader-wrapper">
-    <div>
-      <div class="loader-container">
-        <div class="loader loader1"><span></span></div>
-        <div class="loader loader2"><span></span></div>
-        <div class="loader loader3"><i></i></div>
-        <div class="loader loader4"><i></i></div>
-      </div>
-      <p style="color: white; font-size: 1.5em; margin-top: 20px; text-align: center;">جاري تحميل الصفحة...</p>
+    <div class="loader-container">
+      <div class="loader loader1"></div>
+      <div class="loader loader2"></div>
+      <div class="loader loader3"></div>
+      <div class="loader loader4"></div>
     </div>
+    <p style="color:white; font-size:1.5em;">جاري تحميل الصفحة...</p>
   </div>
 
   <!-- محتوى الموقع -->
   <div class="container">
     <h1>📚 مكتبة البكالوريا</h1>
     <div class="alert">
-      <i class="fas fa-bell"></i> جديد! الانطلاقة الاولى للموقع
+      <i class="fas fa-bell"></i> جديد! الانطلاقة الأولى للموقع
     </div>
+
     <div class="buttons-container">
       <a class="nav-btn" href="https://abo1fayz.github.io/adabi2/">
         <i class="fas fa-flask"></i> الفرع العلمي
@@ -51,32 +189,32 @@
       <div class="dev-list">
         <div class="dev-card special">
           <div class="dev-name">GM-MOHAMED</div>
-          <div>المطور الاول</div>
+          <div>المطور الأول</div>
           <div class="dev-social">
             <a href="https://github.com/abo1fayz"><i class="fab fa-github"></i></a>
-            <a href="https://wa.me/963947733035"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100081592399843"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://wa.me/963947733035"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100081592399843"><i class="fab fa-facebook"></i></a>
           </div>
         </div>
         <div class="dev-card">
           <div class="dev-name">mohamed-saleh</div>
           <div>المطور الثاني</div>
           <div class="dev-social">
-            <a href="https://wa.me/963968283685"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/963968283685"><i class="fab fa-whatsapp"></i></a>
             <a href="https://github.com/MIXPLAYT"><i class="fab fa-github"></i></a>
-            <a href="https://www.facebook.com/share/1CrezvBrQN/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/share/1CrezvBrQN/"><i class="fab fa-facebook"></i></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- كود إخفاء الخلفية بعد التحميل -->
+  <!-- إخفاء شاشة التحميل -->
   <script>
     window.addEventListener("load", () => {
       setTimeout(() => {
         document.getElementById("loader-wrapper").classList.add("hidden");
-      }, 3000); // 3 ثواني قبل الإخفاء
+      }, 3000);
     });
   </script>
 </body>
